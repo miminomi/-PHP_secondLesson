@@ -1,6 +1,14 @@
 <?php
 
-class Product{
+//親クラス
+class BaseProduct{
+    //変数　関数
+    public function echoProduct(){
+        echo '親クラスです';
+    }
+}
+//子クラス
+class Product extends BaseProduct {
 
     //アクセス修飾子,private(外からアクセスできない),protected(自分・継承したクラス),public(公開)
 
@@ -33,6 +41,10 @@ $instance = new Product('テスト');
 var_dump($instance);
 
 $instance->getProduct();
+echo '<br>';
+
+//親クラスのメソッド
+$instance->echoProduct();
 echo '<br>';
 
 $instance->addProduct('追加分');
